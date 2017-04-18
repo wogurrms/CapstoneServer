@@ -1,0 +1,26 @@
+
+<table class="table table-striped">
+
+	<thead>
+		<tr class="bg-success">
+			<th>id</th>
+			<th>date</th>
+			<th>count</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="customer in customerList">
+			<!-- $scope의 userList 배열 요소의 개수만큼 <tr>요소를 생성한다. <tr>요소 내부에서는 user를 통하여 각 배열 요소의 값을 접근할 수 있다. -->
+
+			<!-- ngRepeat 지시자에서 제공하는 $index를 이용하여 각 배열 요소의 인덱스 값에 접근한다. -->
+			<td>{{ customer.id }}</td>
+			<td>{{ customer.date }}</td>
+			<td>{{ customer.count }}</td>
+		</tr>
+		<tr ng-show="!customerList.length">
+			<!-- userList 배열 요소 개수가 0이거나 배열 값이 없을 시 해당 <tr>요소가 보인다. -->
+			<td colspan="6" style="text-align: center"><span
+				class="text-warning">You don't have data</span></td>
+		</tr>
+	</tbody>
+</table>
